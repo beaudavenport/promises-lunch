@@ -1,6 +1,6 @@
 var failureRequest = require('./server/failureRequest');
 
-//BROKEN PROMISE FOUR - forgetting to provide failure callback (or .catch)
+//BROKEN PROMISE FOUR - forgetting to provide a failure callback (or .catch)
 
 failureRequest.then(function(error) {
   console.log('Should be an error: ', error);

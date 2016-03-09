@@ -5,7 +5,6 @@ var successRequest = require('./server/successRequest');
 var myData = successRequest.then(function(data) {
   console.log("got the stuff: \n", data);
   console.log('\n');
-  return data;
 });
 
 console.log(myData);
