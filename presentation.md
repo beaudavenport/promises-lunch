@@ -238,3 +238,44 @@ For our examples, we'll be using 3 http requests wrapped in a promise implementa
 
 ---
 ## Conclusion
+
+### More Promise Features (static methods)
+
+```javascript
+Promise.All([promise, anotherPromise, yetAnotherPromise]).then(function(values) {
+  console.log('An array of values returned from the promises after all have completed: ', values);
+});
+```
+
+```javascript
+Promise.Resolve("foo").then(function(value) {
+  console.log('Gonna be foo: ', value);
+})
+```
+
+```javascript
+Promise.Reject("foo").then(function() {
+  //Not called since it's going to reject
+}, function(failure) {
+  console.log('Gonna be foo treated like a failure value: ', failure);
+});
+```
+
+### The Promise of a better future with ```async/await```
+
+```javascript
+try {
+  let result = await db.post({});
+  let doc = await db.get(result.id);
+  console.log(doc);
+} catch (err) {
+  console.log(err);
+}
+```
+
+## Presentation Materials:
+Download or clone the git repo: [https://github.com/beaudavenport/promises-lunch](https://github.com/beaudavenport/promises-lunch)
+Checkout my blog post on understanding promises through functional tests:
+[http://beaudavenport.github.io/2016/01/23/understanding-promises-through-functional-tests/](http://beaudavenport.github.io/2016/01/23/understanding-promises-through-functional-tests/)
+
+### Thanks for coming!
